@@ -1,0 +1,9 @@
+.button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 5px 10px;
+}
+.button._fw {
+  width: 100%;
+}
