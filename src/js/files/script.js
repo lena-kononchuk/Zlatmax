@@ -6,6 +6,14 @@ import { flsModules } from "./modules.js";
 
 //get menu on toogle
 document.addEventListener("click", documentActions);
+//create menu collumns 
+const menuBlocks = document.querySelectorAll('.sub-menu-catalog__block ');
+if (menuBlocks.length) {
+   menuBlocks.forEach(menuBlock => {
+      const menuBlockItems = menuBlock.querySelectorAll('.sub-menu-catalog__category').length;
+      menuBlock.classList.add(`sub-menu-catalog__block_${menuBlockItems}`);
+   });
+}
 
 function documentActions(e) {
    const targetElement = e.target;
@@ -14,15 +22,22 @@ function documentActions(e) {
       const subMenu = document.querySelector(`[ data-submenu="${subMenuId}"]`);
       const catalogMenu = document.querySelector('.catalog-header');
       if (subMenu) {
+         const activeLink = document.querySelector('._sub-menu-active');
+         const activeBlock = document.querySelector('._sub-menu-open');
 
+
+         if (activeLink && activeLink !== targetElement) {
+            activeLink.classList.remove('_sub-menu-active');
+            activeBlock.classList.remove('_sub-menu-open');
+         }
          targetElement.classList.toggle('_sub-menu-active');
-         document.querySelector('._sub-menu-active') ?
-            subMenu.classList.toggle('_sub-menu-open');
+         subMenu.classList.toggle('_sub-menu-open');
+
       } else {
          console.log('Нет такого subMenu');
       }
+
       e.preventDefault();
 
    }
-
 }
