@@ -461,7 +461,6 @@
 
 //====================================================================================================
 //CATALOG-HEADER
-
 .catalog-header {
 	color: #fff;
 	background-color: #141414;
@@ -477,25 +476,71 @@
 }
 
 .menu-catalog {
+	@media (max-width:$tablet) {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: #141414;
+		padding: rem(25) rem(15) rem(50) rem(15);
+		transition: left 0.3s ease 0s;
+
+		.catalog-open & {
+			left: 0;
+			z-index: 6;
+		}
+	}
 
 	&__list {
 		display: flex;
-		gap: 10px;
+		column-gap: 10px;
 		justify-content: space-between;
+
+		@media (max-width:$tablet) {
+			flex-direction: column;
+			row-gap: rem(25);
+		}
 	}
 
 	&__item {}
 
 	&__link {
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: rem(70);
-		text-align: center;
-		padding: 0px rem(10);
 		position: relative;
 		transition: color 0.3s ease 0s;
 
+		&[data-parent] {
+			&::before {
+				@extend %ic;
+				@extend ._icon-arrowDown;
+				display: none;
+
+				@media (max-width:$tablet) {
+					transform: translateY(rem(5)) rotate(-90deg);
+					display: block;
+					font-size: rem(10);
+
+
+				}
+			}
+
+			@media (max-width:$tablet) {
+				width: 100%;
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: space-between;
+			}
+		}
+
+		@media (min-width:$tablet) {
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			min-height: rem(70);
+			padding: 0px rem(10);
+		}
 
 		&::after {
 			content: "";
@@ -521,13 +566,19 @@
 			}
 		}
 
-		&._sub-menu-active {
-			color: $mainOrange;
+		@media (min-width:$tablet) {
+			&._sub-menu-active {
+				color: $mainOrange;
 
-			&::after {
-				opacity: 1;
-				visibility: visible;
+				&::after {
+					opacity: 1;
+					visibility: visible;
+				}
 			}
+		}
+
+		@media (max-width:$tablet) {
+			@include adaptiveValue("font-size", 30, 20, 992, 320, 1);
 		}
 	}
 
@@ -540,6 +591,27 @@
 		background-color: #141414;
 	}
 
+	&__back {
+		display: none;
+
+		@media (max-width:$tablet) {
+			display: inline-flex;
+			align-items: center;
+			@include adaptiveValue("font-size", 30, 20, 992, 320, 1);
+
+			&:not(:last-child) {
+				margin-bottom: em(65, 30);
+			}
+
+			&::before {
+				margin: 0px em(13, 30) 0px 0px;
+
+			}
+		}
+	}
+}
+
+.sub-menu-catalog {
 	@media (max-width:$tablet) {
 		position: fixed;
 		top: 0;
@@ -548,12 +620,35 @@
 		height: 100%;
 		overflow: auto;
 		background-color: #141414;
-		padding: rem(100) rem(15) rem(50) rem(15);
+		padding: rem(25) rem(15) rem(50) rem(15);
 		transition: left 0.3s ease 0s;
-	}
-}
 
-.sub-menu-catalog {
+
+		.sub-menu-open & {
+			display: block;
+			left: 0;
+			z-index: 6;
+		}
+	}
+
+	&__back {
+		display: none;
+
+		@media (max-width:$tablet) {
+			display: inline-flex;
+			align-items: center;
+			@include adaptiveValue("font-size", 30, 20, 992, 320, 1);
+
+			&:not(:last-child) {
+				margin-bottom: em(65, 30);
+			}
+
+			&::before {
+				margin: 0px em(13, 30) 0px 0px;
+
+			}
+		}
+	}
 
 	&__block {
 		display: none;
@@ -565,11 +660,15 @@
 			}
 		}
 
-		// justify-content: space-between;
-
 		&._sub-menu-open {
 			display: grid;
+
+			@media (max-width:$tablet) {
+				display: block;
+			}
 		}
+
+
 	}
 
 	&__container {
@@ -578,13 +677,22 @@
 
 	&__category {
 		font-size: rem(16);
-		font-weight: 700;
 		line-height: math.div(20, 16);
-		padding: rem(30) rem(15) rem(30) 0;
 
 		@media (any-hover: hover) {
 			&:hover {
 				text-decoration: underline;
+			}
+		}
+
+		@media (min-width:$tablet) {
+			padding: rem(30) rem(15) rem(30) 0;
+			font-weight: 700;
+		}
+
+		@media (max-width:$tablet) {
+			&:not(:last-child) {
+				margin-bottom: em(25, 16);
 			}
 		}
 	}
@@ -597,6 +705,10 @@
 		padding: rem(30) rem(15) rem(30) 0;
 		border-top: 1px solid rgba(255, 255, 255, 0.3);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+		@media (max-width:$tablet) {
+			display: none;
+		}
 	}
 
 	&__items {}
@@ -613,8 +725,17 @@
 		}
 	}
 
+	&__link-category {
+		@include adaptiveValue("font-size", 30, 20, 992, 320);
+	}
+
+
 	&__footer {
 		padding: rem(30) rem(15) rem(30) 0;
+
+		@media (max-width:$tablet) {
+			display: none;
+		}
 	}
 
 	&__all {
@@ -638,7 +759,7 @@
 		width: 40px;
 		height: rem(22.5);
 		cursor: pointer;
-		z-index: 5;
+		z-index: 10;
 
 		span,
 		&::before,

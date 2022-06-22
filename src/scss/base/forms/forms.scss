@@ -6,22 +6,11 @@
 
 	&__column {}
 
-	&__line {
-		display: flex;
-		flex-direction: column;
-		width: 20%;
-	}
+	&__line {}
 
-	& input {
-		border: 1px solid gainsboro;
-		margin: 0 0 10px 10px;
-		padding: 5px 10px;
-	}
+	& input {}
 
-	&__button {
-		// margin: 0 0 10px 10px;
-		// padding: 5px 10px;
-	}
+	&__button {}
 
 	&__error {}
 
