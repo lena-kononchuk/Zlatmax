@@ -198,13 +198,12 @@
 
 	&__search {
 		flex: 1 1 auto;
-		@include adaptiveValue("padding-left", 158, 20, 1620, 1250, 1);
 
 		@media (min-width:$tablet) {
 			padding-right: rem(20);
 		}
 
-		@media (max-width:$mobileSmall) {
+		@media (min-width:$mobileSmall) {
 			@include adaptiveValue("padding-left", 158, 20, 1620, 1250, 1);
 		}
 	}
