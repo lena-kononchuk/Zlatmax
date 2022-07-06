@@ -352,6 +352,9 @@
 //====================================================================================================
 .catalog-cards {
 
+   @include adaptiveValue("padding-top", 100, 40);
+   @include adaptiveValue("padding-bottom", 70, 40);
+
    // .catalog-card__container
    &__container {
       display: grid;

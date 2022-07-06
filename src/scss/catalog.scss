@@ -1,0 +1,204 @@
+//========================================================================================================================================================
+
+.catalog {
+   @include adaptiveValue("padding-bottom", 120, 40);
+
+   // .catalog__container
+   &__container {}
+
+   // .catalog__body
+   &__body {
+      display: grid;
+      align-items: flex-start;
+      gap: rem(30);
+
+      @media (min-width:$tablet) {
+         grid-template-columns: rem(375) 1fr;
+      }
+   }
+
+   // .catalog__filter
+   &__filter {}
+
+   // .catalog__content
+   &__content {}
+
+   // .catalog__contro
+   &__control {
+      display: flex;
+      justify-content: flex-end;
+
+      &:not(:last-child) {
+         margin-bottom: rem(20);
+      }
+
+   }
+
+   // .catalog__products
+   &__products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+      gap: rem(30);
+
+      &:not(:last-child) {
+         @include adaptiveValue("  margin-bottom", 60, 30);
+      }
+   }
+
+   &__footer {
+      display: flex;
+      justify-content: space-between;
+      gap: rem(20);
+
+      @media (max-width:$tablet) {
+         flex-direction: column;
+      }
+   }
+
+   // .catalog__more
+
+   &__more {}
+
+   // .catalog__pagging
+
+   &__pagging {}
+}
+
+//========================================================================================================================================================
+.filter-catalog {
+   background: #FEFEFE;
+   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+   // .filter-catalog__title
+
+   &__title {
+      width: 100%;
+      background-color: $darkColor;
+      text-align: left;
+      font-weight: 700;
+      font-size: rem(20);
+      line-height: math.div(24, 20);
+      color: #FFFFFF;
+      padding: rem(23) rem(30);
+   }
+
+   // .filter-catalog__items
+
+   &__items {
+      @media (max-width:$tablet) {
+         display: none;
+
+         &._active {
+            display: block;
+         }
+      }
+   }
+
+   // .filter-catalog__price
+
+   &__price {}
+}
+
+.price-filter {
+   padding: rem(30);
+
+   // .price-filter__title
+   &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+      width: 100%;
+
+      &::before {
+         transition: transform 0.3s ease 0s;
+         color: $mainOrange;
+         font-size: rem(8);
+         transform: rotate(-180deg);
+      }
+
+      &._spoller-active {
+
+         &::before {
+            transform: rotate(0deg);
+         }
+      }
+   }
+
+   // .price-filter__body
+   &__body {
+      padding: rem(30) 0px 0px 0px;
+
+   }
+
+   // .price-filter__inputs
+   &__inputs {
+      display: flex;
+      border: 1px solid #CBCBCB;
+      border-radius: rem(2);
+      overflow: hidden;
+
+      &:not(:last-child) {
+         margin-bottom: rem(45);
+      }
+   }
+
+   // .price-filter__input
+   &__input {
+      width: 50%;
+      // line-height: math.div(20, 18);
+      padding: 0px rem(15);
+      text-align: center;
+      color: #141414;
+      height: rem(42);
+
+      &:not(:last-child) {
+         border-right: 1px solid #CBCBCB;
+      }
+   }
+
+   // .price-filter__range
+   &__range {}
+}
+
+//========================================================================================================================================================
+.item-filter-catalog {
+
+   // .item-filter-catalog__title
+   &__title {
+      background-color: #141414;
+      color: #fff;
+      width: 100%;
+      padding: rem(13) rem(30);
+      font-weight: 700;
+      font-size: rem(20);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+
+      &::before {
+         transition: transform 0.3s ease 0s;
+         color: $mainOrange;
+         font-size: rem(8);
+         transform: rotate(-180deg);
+      }
+
+      &._spoller-active {
+
+         &::before {
+            transform: rotate(0deg);
+         }
+      }
+   }
+
+   // .item-filter-catalog__body
+   &__body {
+      padding: rem(30);
+   }
+
+   &__checkbox {
+      &:not(:last-child) {
+         margin-bottom: rem(22);
+      }
+   }
+}

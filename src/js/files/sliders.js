@@ -106,28 +106,30 @@ function initSliders() {
 			}
 		});
 	}
-	//product slider
 	if (document.querySelector('.products-slider')) {
 		new Swiper('.products-slider__slider', {
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation, Pagination, Autoplay],
 			//effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
 			observer: true,
+			watchOverflow: true,
 			observeParents: true,
 			slidesPerView: 4,
-			watchOverflow: true,
 			spaceBetween: 30,
 			parallax: true,
 			//autoHeight: true,
 			speed: 800,
 			//touchRatio: 0,
 			//simulateTouch: false,
-			// loop: true,
+			//loop: true,
 			//preloadImages: false,
 			//lazy: true,
 			// Dotts
-
 			pagination: {
 				el: '.products-slider__dotts',
 				clickable: true,
@@ -152,7 +154,6 @@ function initSliders() {
 					spaceBetween: 30,
 				},
 			},
-
 			on: {
 				init: function (swiper) {
 
@@ -160,7 +161,6 @@ function initSliders() {
 			}
 		});
 	}
-
 	if (document.querySelector('.products-new')) {
 		new Swiper('.products-new__slider', {
 			// Подключаем модули слайдера
@@ -174,8 +174,8 @@ function initSliders() {
 			observer: true,
 			watchOverflow: true,
 			observeParents: true,
-			slidesPerView: 3,
-			spaceBetween: 30,
+			slidesPerView: 4,
+			spaceBetween: 16,
 			parallax: true,
 			//autoHeight: true,
 			speed: 800,
@@ -244,6 +244,7 @@ function initSliders() {
 			},
 
 			breakpoints: {
+
 				992: {
 					slidesPerView: 3,
 				},

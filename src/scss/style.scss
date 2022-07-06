@@ -164,6 +164,9 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
+@import "catalog";
+@import "product";
+
 
 // .page__home
 .page {
@@ -171,15 +174,25 @@ body {
 	// .page_home
 	&_home {}
 
+	// .page_inner
+	&_inner {
+		padding-top: rem(30);
+	}
+
+	// .page__header
+	&__header {
+		margin-bottom: rem(30);
+	}
+
 	// .page__main-block
 	&__main-block {}
 
-	// .page__catalog-card
+	// .page__catalog-cards
 	&__catalog-cards {}
 
-	&__products-slider {}
-
+	// .page__articles-module
 	&__articles-module {}
 
+	// .page__products-block
 	&__products-block {}
 }
