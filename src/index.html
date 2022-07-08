@@ -9,30 +9,32 @@
 
 <body>
 	<div class="rootpage">
-		<h1>Верстка «NEW_PROJECT_NAME»</h1>
 		<div class="rootpage__info">
-			Особенности проекта
+			<h1>Верстка магазина ножей «NEW_PROJECT_NAME»</h1>
+			<h2>Готовые страницы:</h2>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="home.html">Главная</a></li>
+				<li><a target="_blank" href="catalog.html">Каталог</a></li>
+				<li><a target="_blank" href="product.html">Карточка товара</a></li>
+			</ol>
+			<h2>Попап</h2>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="home.html#">Главная</a></li>
+			</ol>
+			<h2>Слайдер</h2>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="home.html#">Главная</a></li>
+				<li><a target="_blank" href="product.html">Карточка товара</a></li>
+			</ol>
+			<div class="rootpage__contacts">
+				<h2>Мои контакты:</h2>
+				<p>Почта: <a href="mailto:kononchuk.elena91@gmail.com">kononchuk.elena91@gmail.com</a></p>
+				<p>Телефон: <a href="tel:380933175650">+380 93 317 56 50</a></p>
+			</div>
+
 		</div>
-		<h2>Готовые страницы:</h2>
-		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html">Главная</a></li>
-			<li><a target="_blank" href="catalog.html">Каталог</a></li>
-			<li><a target="_blank" href="product.html">Карточка товара</a></li>
-		</ol>
-		<h2>Попапы:</h2>
-		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html#"></a></li>
-		</ol>
-		<div class="rootpage__tnx">
-			<h2>Спасибо за заказ!</h2>
-			<p>Буду рад (а) хорошему отзыву.</p>
-			<p>Обращайтесь еще!</p>
-		</div>
-		<div class="rootpage__contacts">
-			<h2>Мои контакты:</h2>
-			<p>Почта: <a href="mailto:email@gmail.com">email@gmail.com</a></p>
-			<p>Телефон: <a href="tel:8800800800">8 800 800 800</a></p>
-			<p>Соц. сеть: <a href="">ссылка на соц. сеть</a></p>
+		<div class="rootpage__image">
+			<img src="@img/mainpage/main-block/image.png" alt="Knife">
 		</div>
 	</div>
 </body>
@@ -56,8 +58,7 @@
 		padding: 0;
 		min-width: 320px;
 		width: 100%;
-		color: #fff;
-		background-color: #5e5373;
+		background: url('@img/mainpage/main-block/bg.jpg') center / cover no-repeat;
 	}
 
 	body {
@@ -98,8 +99,12 @@
 	.rootpage {
 		padding: 30px;
 		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
+	}
+
+	.rootpage__image {
+		flex: 1 1 50%;
+		display: flex;
+		justify-content: center;
 	}
 
 	@media (max-width: 767px) {
@@ -109,8 +114,11 @@
 	}
 
 	h1 {
-		color: #ebe691;
-		font-size: 2.5rem;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 46px;
+		letter-spacing: 0.03em;
+		color: #FFFFFF;
 		margin: 0px 0px 1.25rem 0px;
 	}
 
@@ -122,9 +130,10 @@
 	}
 
 	h2 {
-		color: #ebe691;
-		font-size: 1.25rem;
-		margin: 0px 0px 1rem 0px;
+		font-size: 24px;
+		line-height: 46px;
+		letter-spacing: 0.03em;
+		color: #FFFFFF;
 	}
 
 	@media (max-width: 767px) {
@@ -137,44 +146,45 @@
 	.rootpage__info {
 		line-height: 140%;
 		margin: 0px 0px 1.5rem 0px;
+		flex: 1 1 50%;
 	}
 
 	.rootpage__list {
-		margin: 0px 0px 2.25rem 1.25rem;
+		margin: 0px 0px 2rem 1.25rem;
+		color: #E8AA31;
 	}
 
 	.rootpage__list li:not(:last-child) {
 		margin: 0px 0px 15px 0px;
 	}
 
-	.rootpage__contacts,
-	.rootpage__tnx {
-		border-radius: 200px;
-		padding: 20px 65px;
-		line-height: 140%;
-	}
-
-	@media (max-width: 767px) {
-
-		.rootpage__contacts,
-		.rootpage__tnx {
-			border-radius: 40px;
-			padding: 20px;
-		}
-	}
 
 	.rootpage__contacts {
-		background: #32b5a4;
+		background: #E8AA31;
+		box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
+		padding: 20px;
+		border-radius: 20px;
+	}
 
+	.rootpage__info a {
+		color: #E8AA31;
+	}
+
+	.rootpage__contacts p {
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 34px;
+		color: #000000;
 	}
 
 	.rootpage__contacts a {
-		color: #ebe691;
+		color: #000000;
+		font-size: 16px;
+		text-decoration: none;
 	}
 
-	.rootpage__tnx {
-		background: #c22d63;
-		margin: 0px 0px 1rem 0px;
+	.rootpage__contacts a:hover {
+		text-decoration: underline;
 	}
 </style>
 

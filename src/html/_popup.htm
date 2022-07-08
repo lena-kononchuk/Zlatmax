@@ -1,10 +1,22 @@
 <div id="callback" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-				Тут будет форма
+			<div class="popup__header">
+				<button data-close type="button" class="popup__close">✕</button>
+				<div class="popup__text">Форма обратной связи</div>
 			</div>
+			<form action="#" class="spollers-item__popup popup-body">
+				<label for="popup-body__name" class="popup-body__label">Ваше имя: </label>
+				<input id="popup-body__name" autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+					data-required="name" placeholder="Nikita" class="popup-body__input">
+				<label for="popup-body__email" class="popup-body__label">E-mail адрес: </label>
+				<input id="popup-body__email" autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+					data-required="email" placeholder="example@gmail.com" class="popup-body__input">
+				<label for="popup-body__textarea" class="popup-body__label">Текст сообщения:</label>
+				<textarea id="popup-body__textarea" rows="5" cols="33" type="text" name="form[]"
+					class="popup-body__textarea"></textarea>
+				<button type="submit" class="popup-body__button">Отправить</button>
+			</form>
 		</div>
 	</div>
 </div>

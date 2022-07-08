@@ -11,9 +11,11 @@ body::after {
 	pointer-events: none;
 	z-index: 149;
 }
+
 .popup-show body::after {
 	opacity: 1;
 }
+
 .popup {
 	position: fixed;
 	top: 0;
@@ -25,16 +27,19 @@ body::after {
 	visibility: hidden;
 	pointer-events: none;
 }
+
 .popup_show {
 	z-index: 150;
 	visibility: visible;
 	overflow: auto;
 	pointer-events: auto;
 }
+
 .popup_show .popup__content {
 	visibility: visible;
 	transform: scale(1);
 }
+
 .popup__wrapper {
 	display: flex;
 	flex-direction: column;
@@ -46,6 +51,7 @@ body::after {
 	justify-content: center;
 	align-items: center;
 }
+
 .popup__content {
 	visibility: hidden;
 	transform: scale(0);
@@ -53,9 +59,116 @@ body::after {
 	background-color: #eee;
 	padding: 20px;
 	width: 100%;
-	max-width: 900px;
+	max-width: 700px;
 	border-radius: 20px;
+
+
 	.lock & {
 		visibility: visible;
+	}
+}
+
+//========================================================================================================================================================
+
+.popup {
+
+	// .popup__content
+	&__content {}
+
+	// .popup__header
+	&__header {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: center;
+		@include adaptiveValue("padding-bottom", 20, 10);
+	}
+
+	// .popup__close
+
+	&__close {
+		font-size: rem(20);
+
+		@media (any-hover: hover) {
+			&:hover {
+				transform: rotate(45deg);
+				color: red;
+			}
+		}
+	}
+
+	// .popup__text
+
+	&__text {
+		font-weight: 600;
+		font-size: rem(20);
+		line-height: math.div(34, 20);
+		color: #141414;
+	}
+}
+
+.spollers-item {
+
+	// .spollers-item__popup
+
+	&__popup {}
+}
+
+.popup-body {
+	display: flex;
+	flex-direction: column;
+	// .popup-body__label
+
+	&__label {
+		font-size: rem(20);
+		line-height: math.div(34, 20);
+		color: #141414;
+		margin-bottom: rem(5);
+
+		&::after {
+			content: '*';
+			color: red;
+			padding-left: rem(5);
+		}
+	}
+
+	// .popup-body__input
+
+	&__input {
+		padding: rem(12);
+		font-size: rem(18);
+		line-height: math.div(34, 24);
+		color: #ABABAB;
+		border-radius: rem(2);
+
+		&:not(:last-child) {
+			margin-bottom: em(15, 10);
+		}
+	}
+
+	// .popup-body__button
+
+	&__button {
+		font-weight: 600;
+		line-height: math.div(46, 36);
+		color: #fff;
+		padding: rem(12);
+		background: #E8AA31;
+		box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
+		border-radius: rem(3);
+		@include adaptiveValue("margin-top", 20, 10);
+		@include adaptiveValue("margin-bottom", 20, 10);
+
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow: 0px 4px 30px rgba(232, 170, 49, 0.42);
+			}
+		}
+	}
+
+	// .popup-body__textarea
+	&__textarea {
+		min-width: 100%;
+		max-width: 100%;
 	}
 }

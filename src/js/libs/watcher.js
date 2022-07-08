@@ -1,14 +1,6 @@
-// Подключение функционала "Чертогов Фрилансера"
+// Подключение функционала 
 import { isMobile, uniqArray, FLS } from "../files/functions.js";
 import { flsModules } from "../files/modules.js";
-
-// Наблюдатель объектов [всевидещее око]
-// data-watch - можно писать значение для применения кастомного кода
-// data-watch-root - родитель внутри которого налюдать за объектом
-// data-watch-margin - отступ
-// data-watch-threshold - процент показа объекта для срабатывания
-// data-watch-once - наблюдать только один раз
-// _watcher-view - класс который добавляется при появлении объекта
 
 class ScrollWatcher {
 	constructor(props) {
@@ -148,18 +140,6 @@ class ScrollWatcher {
 				entry: entry
 			}
 		}));
-
-		/*
-		// Выбираем нужные объекты
-		if (targetElement.dataset.watch === 'some value') {
-			// пишем уникальную специфику
-		}
-		if (entry.isIntersecting) {
-			// Видим объект
-		} else {
-			// Не видим объект
-		}
-		*/
 	}
 }
 // Запускаем и добавляем в объект модулей
