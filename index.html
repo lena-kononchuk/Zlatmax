@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Верстка «Zlatmax»</title>
+</head>
+
+<body>
+	<div class="rootpage">
+		<div class="rootpage__info">
+			<h1>Верстка магазина ножей «Zlatmax»</h1>
+			<h2>Готовые страницы:</h2>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="home.html">Главная</a></li>
+				<li><a target="_blank" href="catalog.html">Каталог</a></li>
+				<li><a target="_blank" href="product.html">Карточка товара</a></li>
+			</ol>
+			<h2>Попап</h2>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="home.html#">Главная</a></li>
+			</ol>
+			<h2>Слайдер</h2>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="home.html#">Главная</a></li>
+				<li><a target="_blank" href="product.html">Карточка товара</a></li>
+			</ol>
+			<div class="rootpage__contacts">
+				<h2>Мои контакты:</h2>
+				<p>Почта: <a href="mailto:kononchuk.elena91@gmail.com">kononchuk.elena91@gmail.com</a></p>
+				<p>Телефон: <a href="tel:380933175650">+380 93 317 56 50</a></p>
+			</div>
+
+		</div>
+		<div class="rootpage__image">
+			<picture><source srcset="img/mainpage/main-block/image.webp" type="image/webp"><img src="img/mainpage/main-block/image.png" alt="Knife"></picture>
+		</div>
+	</div>
+</body>
+<style>
+	@charset "UTF-8";
+	@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
+
+	*,
+	*::before,
+	*::after {
+		padding: 0px;
+		margin: 0px;
+		border: 0px;
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		min-width: 320px;
+		width: 100%;
+		background: url('img/mainpage/main-block/bg.jpg') center / cover no-repeat;
+	}
+
+	body {
+		font-family: Montserrat;
+		font-size: 100%;
+		line-height: 1;
+		font-size: 1rem;
+	}
+
+	a {
+		text-decoration: underline;
+		color: #ebe691
+	}
+
+	a:visited {
+		text-decoration: underline;
+		color: #aaa768;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	ul li {
+		list-style: none;
+	}
+
+	img {
+		vertical-align: top;
+	}
+
+	.wrapper {
+		width: 100%;
+		min-height: 100%;
+		overflow: hidden;
+	}
+
+	.rootpage {
+		padding: 30px;
+		display: flex;
+	}
+
+	.rootpage__image {
+		flex: 1 1 50%;
+		display: flex;
+		justify-content: center;
+	}
+
+	@media (max-width: 767px) {
+		.rootpage {
+			padding: 30px 15px;
+		}
+	}
+
+	h1 {
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 46px;
+		letter-spacing: 0.03em;
+		color: #FFFFFF;
+		margin: 0px 0px 1.25rem 0px;
+	}
+
+	@media (max-width: 767px) {
+		h1 {
+			font-size: 1.85rem;
+			margin: 0px 0px 1.25rem 0px;
+		}
+	}
+
+	h2 {
+		font-size: 24px;
+		line-height: 46px;
+		letter-spacing: 0.03em;
+		color: #FFFFFF;
+	}
+
+	@media (max-width: 767px) {
+		h2 {
+			font-size: 1.125rem;
+			margin: 0px 0px 1rem 0px;
+		}
+	}
+
+	.rootpage__info {
+		line-height: 140%;
+		margin: 0px 0px 1.5rem 0px;
+		flex: 1 1 50%;
+	}
+
+	.rootpage__list {
+		margin: 0px 0px 2rem 1.25rem;
+		color: #E8AA31;
+	}
+
+	.rootpage__list li:not(:last-child) {
+		margin: 0px 0px 15px 0px;
+	}
+
+
+	.rootpage__contacts {
+		background: #E8AA31;
+		box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
+		padding: 20px;
+		border-radius: 20px;
+	}
+
+	.rootpage__info a {
+		color: #E8AA31;
+	}
+
+	.rootpage__contacts p {
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 34px;
+		color: #000000;
+	}
+
+	.rootpage__contacts a {
+		color: #000000;
+		font-size: 16px;
+		text-decoration: none;
+	}
+
+	.rootpage__contacts a:hover {
+		text-decoration: underline;
+	}
+</style>
+
+</html>
